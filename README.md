@@ -71,11 +71,22 @@ The central rule is:
 
 These are real executable demonstrations using the same framework surfaces intended for third-party mods.
 
+> **Videos:** The demonstrations live on the [`Video-Uploads` branch](https://github.com/Salacious-Oni-Dev/API-Pre-Release-Preview/tree/Video-Uploads). GitHub provides its native video viewer for the committed `.mp4` files; the showcase pages below provide the technical context and API cross-reference.
+
+| Showcase | What it demonstrates | Video |
+|---|---|---|
+| **AirLoop** | Multi-species atmosphere, oxygen partial pressure, composition-aware breathing | [▶ Watch AirLoop](https://github.com/Salacious-Oni-Dev/API-Pre-Release-Preview/blob/Video-Uploads/airloop.mp4) |
+| **PhaseLoop** | Pressure-driven phase change, latent heat, gas/liquid bridging, work and heat transfer | [▶ Watch PhaseLoop](https://github.com/Salacious-Oni-Dev/API-Pre-Release-Preview/blob/Video-Uploads/phaseloop.mp4) |
+| **PipeStress** | Pressure, condensation, freezing, standing matter and rupture/stress evaluation | [▶ Watch PipeStress](https://github.com/Salacious-Oni-Dev/API-Pre-Release-Preview/blob/Video-Uploads/pipestress.mp4) |
+| **SimViz** | Offline/live simulation inspection, history playback, extension data and diagnostics | [▶ Watch SimViz](https://github.com/Salacious-Oni-Dev/API-Pre-Release-Preview/blob/Video-Uploads/simviz-showcase.mp4) |
+
+For the full technical treatment, use the dedicated showcase pages once published.
+
 ## AirLoop
 
 **Demonstrates:** multi-species atmosphere, oxygen partial pressure, composition-aware breathing, contamination, and atmospheric assessment.
 
-**Video:** [AirLoop showcase](https://github.com/Salacious-Oni-Dev/API-Pre-Release-Preview/blob/Video-Uploads/airloop.mp4)
+**Video:** [▶ Watch AirLoop](https://github.com/Salacious-Oni-Dev/API-Pre-Release-Preview/blob/Video-Uploads/airloop.mp4)
 
 AirLoop seals an atmosphere, mixes species to a target oxygen partial pressure, and checks what a duplicant actually breathes. It demonstrates why a real atmosphere needs composition rather than a single-element cell model.
 
@@ -85,7 +96,7 @@ AirLoop seals an atmosphere, mixes species to a target oxygen partial pressure, 
 
 **Demonstrates:** pressure-driven phase change, latent heat, gas/liquid bridging, work, and heat transfer rather than heat deletion.
 
-**Video:** [PhaseLoop showcase](https://github.com/Salacious-Oni-Dev/API-Pre-Release-Preview/blob/Video-Uploads/phaseloop.mp4)
+**Video:** [▶ Watch PhaseLoop](https://github.com/Salacious-Oni-Dev/API-Pre-Release-Preview/blob/Video-Uploads/phaseloop.mp4)
 
 The loop moves matter between gas and liquid networks while measuring the cold-side/hot-side energy result. It demonstrates thermodynamic machinery rather than scripted temperature changes.
 
@@ -95,7 +106,7 @@ The loop moves matter between gas and liquid networks while measuring the cold-s
 
 **Demonstrates:** pipe pressure, condensation, freezing, standing matter, and rupture/stress evaluation.
 
-**Video:** [PipeStress showcase](https://github.com/Salacious-Oni-Dev/API-Pre-Release-Preview/blob/Video-Uploads/pipestress.mp4)
+**Video:** [▶ Watch PipeStress](https://github.com/Salacious-Oni-Dev/API-Pre-Release-Preview/blob/Video-Uploads/pipestress.mp4)
 
 The 12-tile test run moves through baseline, mass overpressure, thermal overpressure, condensation, freezing, and rupture/stress states. A key result is that stress evaluation must account for **standing liquid and standing solid matter**, not only flowing contents.
 
@@ -107,7 +118,7 @@ The 12-tile test run moves through baseline, mass overpressure, thermal overpres
 
 **Demonstrates:** offline simulation inspection, captured-history playback, live attachment, cell inspection, extension properties, element attributes, events, state dumps, statistics, snapshots, and headless testing/rendering.
 
-**Video:** [SimViz showcase](https://github.com/Salacious-Oni-Dev/API-Pre-Release-Preview/blob/Video-Uploads/simviz-showcase.mp4)
+**Video:** [▶ Watch SimViz](https://github.com/Salacious-Oni-Dev/API-Pre-Release-Preview/blob/Video-Uploads/simviz-showcase.mp4)
 
 SimViz is a **separate native application**, not an in-game graphics injector. It can inspect the same simulation information from captured/offline data or a running ONI process through framework bulk/debug routes.
 
