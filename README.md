@@ -15,16 +15,16 @@ It intentionally contains **documentation and demonstrations, not implementation
 
 ## ▶️ CLICK A VIDEO TO WATCH
 
-These aren't screenshots — **each large preview below is a clickable YouTube video**. Click anywhere on the image, or use the prominent **WATCH VIDEO** button beneath it.
+These are presented as **large screenshot-style video thumbnails**, not plain text links. **Click the screenshot/thumbnail itself to open the YouTube video**, or use the explicit **▶️ WATCH VIDEO** direction immediately above it.
 
 ---
 
 ## 🔬 AirLoop
 ### Composition-aware atmospheres
 
-**▶️ [WATCH AIRLOOP VIDEO](https://youtu.be/3JrISB8L77M)**
+**▶️ WATCH THE AIRLOOP VIDEO — click the screenshot below**
 
-<a href="https://youtu.be/3JrISB8L77M"><img src="https://img.youtube.com/vi/3JrISB8L77M/maxresdefault.jpg" alt="▶️ CLICK TO WATCH AIRLOOP VIDEO" width="900"></a>
+<a href="https://youtu.be/fgxkWMc1DYw"><img src="https://img.youtube.com/vi/fgxkWMc1DYw/maxresdefault.jpg" alt="▶️ CLICK THIS SCREENSHOT TO WATCH AIRLOOP" width="900"></a>
 
 **Multi-species atmosphere · oxygen partial pressure · composition-aware breathing · contamination**
 
@@ -37,9 +37,9 @@ AirLoop seals an atmosphere, mixes species to a target oxygen partial pressure, 
 ## ❄️ PhaseLoop
 ### Thermodynamic phase change
 
-**▶️ [WATCH PHASELOOP VIDEO](https://youtu.be/MsLZPUQXO1E)**
+**▶️ WATCH THE PHASELOOP VIDEO — click the screenshot below**
 
-<a href="https://youtu.be/MsLZPUQXO1E"><img src="https://img.youtube.com/vi/MsLZPUQXO1E/maxresdefault.jpg" alt="▶️ CLICK TO WATCH PHASELOOP VIDEO" width="900"></a>
+<a href="https://youtu.be/FJl1BZNlgnA"><img src="https://img.youtube.com/vi/FJl1BZNlgnA/maxresdefault.jpg" alt="▶️ CLICK THIS SCREENSHOT TO WATCH PHASELOOP" width="900"></a>
 
 **Pressure-driven phase change · latent heat · gas/liquid bridging · work · energy transfer**
 
@@ -52,9 +52,9 @@ PhaseLoop demonstrates a real gas/liquid loop in which pressure-driven phase cha
 ## 💥 PipeStress
 ### Matter-aware pipe failure
 
-**▶️ [WATCH PIPESTRESS VIDEO](https://youtu.be/5R5uP2IiXP4)**
+**▶️ WATCH THE PIPESTRESS VIDEO — click the screenshot below**
 
-<a href="https://youtu.be/5R5uP2IiXP4"><img src="https://img.youtube.com/vi/5R5uP2IiXP4/maxresdefault.jpg" alt="▶️ CLICK TO WATCH PIPESTRESS VIDEO" width="900"></a>
+<a href="https://youtu.be/FXGOLI7Ijj4"><img src="https://img.youtube.com/vi/FXGOLI7Ijj4/maxresdefault.jpg" alt="▶️ CLICK THIS SCREENSHOT TO WATCH PIPESTRESS" width="900"></a>
 
 **Pressure · thermal stress · condensation · freezing · standing matter · rupture**
 
@@ -67,9 +67,9 @@ PipeStress drives a real 12-tile gas run through baseline, mass overpressure, th
 ## 🖥️ SimViz
 ### Inspect the simulation itself
 
-**▶️ [WATCH SIMVIZ VIDEO](https://youtu.be/1bOM0Sx26bE)**
+**▶️ WATCH THE SIMVIZ VIDEO — click the screenshot below**
 
-<a href="https://youtu.be/1bOM0Sx26bE"><img src="https://img.youtube.com/vi/1bOM0Sx26bE/maxresdefault.jpg" alt="▶️ CLICK TO WATCH SIMVIZ VIDEO" width="900"></a>
+<a href="https://youtu.be/1bOM0Sx26bE"><img src="https://img.youtube.com/vi/1bOM0Sx26bE/maxresdefault.jpg" alt="▶️ CLICK THIS SCREENSHOT TO WATCH SIMVIZ" width="900"></a>
 
 **Offline simulation · live attachment · history playback · cell inspection · extension data · diagnostics**
 
@@ -79,9 +79,9 @@ SimViz is a separate native application for inspecting the same simulation data 
 
 ---
 
-> **💡 Want to watch one? Click the thumbnail or the `▶️ WATCH ... VIDEO` button directly above it.**
+> **💡 How to watch:** click the large screenshot-style thumbnail for the video you want. The explicit **▶️ WATCH THE ... VIDEO — click the screenshot below** direction is provided directly above every video.
 >
-> GitHub README Markdown cannot host an interactive YouTube player/iframe, so the thumbnails are deliberately presented as **video cards** with explicit click-to-watch controls. The original `.mp4` recordings are also retained on the [`Video-Uploads` branch](https://github.com/Salacious-Oni-Dev/API-Pre-Release-Preview/tree/Video-Uploads) as archival copies.
+> GitHub README Markdown cannot host an interactive YouTube player/iframe, so each showcase uses the actual YouTube thumbnail as a **clickable screenshot/video card**. The archived `.mp4` recordings are no longer part of the intended public preview workflow.
 
 ---
 
@@ -210,7 +210,7 @@ API-Pre-Release-Preview/
 │   ├── native/                       ← ABI / native boundary
 │   ├── examples/                     ← practical usage
 │   └── showcases/                    ← rig-by-rig technical docs
-└── Video-Uploads branch              ← archival MP4 recordings
+└── YouTube showcases                 ← canonical demonstration videos
 ```
 
 ---
