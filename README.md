@@ -1,160 +1,206 @@
-# ONI Custom Simulation API — Pre-Release SDK Preview
+# ONI Custom Simulation API
+## Pre-Release SDK Preview
 
-> **Private technical preview and pre-release SDK reference** for the custom Oxygen Not Included simulation stack, `oni-framework`, flagship simulation systems, and SimViz.
+> **A source-audited preview of the custom simulation API for Oxygen Not Included.**
+>
+> Physics extensions • Thermodynamics • Fluid dynamics • Matter • Atmospheres • Pipe systems • Automation • SimViz
 
-This repository intentionally contains **documentation and demonstrations, not implementation source code**. It is the developer-facing preview of the SDK before the implementation repositories are released.
+This repository is the **pre-release SDK reference and showcase** for the custom ONI simulation stack.
 
-## Release status
-
-- **Current:** documentation + showcase preview; no implementation source is attached.
-- **Expected source release:** the currently private related repositories are **targeted for Sunday, September 13, 2026**, subject to final release preparation and validation.
-- **Pre-release caveat:** API details may still change before source publication. The goal of this preview is to make the modder-facing contract as explicit and stable as possible.
-
-See [Release Status](docs/RELEASE-STATUS.md).
+It intentionally contains **documentation and demonstrations, not implementation source code**. The implementation repositories are currently private and are targeted for release on **Sunday, September 13, 2026**, subject to final release preparation and validation.
 
 ---
 
-# SDK Manual
+## 🎬 See the simulation in action
 
-The README is the portal. The detailed API reference is split into smaller documents so individual APIs can be documented with their real signatures, behavior, units, performance characteristics, native dependencies, limitations, and examples without creating one enormous file.
+The four demonstrations below are the best way to understand what this API is actually intended to make possible.
 
-## Core API reference
+### AirLoop — Composition-aware atmospheres
 
-- [API Reference Index](docs/api/README.md)
-- [Gas Mixture](docs/api/GAS-MIXTURE.md)
-- [Atmosphere](docs/api/ATMOSPHERE.md)
-- [Material Properties](docs/api/MATERIALS.md)
-- [Pipe Matter](docs/api/MATTER.md)
-- [Pipe Networks](docs/api/PIPES.md)
-- [Thermal & Energy](docs/api/THERMAL-ENERGY.md)
-- [Elements & Cells](docs/api/ELEMENTS.md)
+<a href="https://youtu.be/3JrISB8L77M"><img src="https://img.youtube.com/vi/3JrISB8L77M/maxresdefault.jpg" alt="Watch the AirLoop demonstration" width="800"></a>
 
-More pages for extension properties, attributes, events, scheduling, persistence, rooms, deterministic state, diagnostics, and tooling are being added as their source audits are completed.
+**Multi-species atmosphere · oxygen partial pressure · composition-aware breathing · contamination**
+
+AirLoop seals an atmosphere, mixes species to a target oxygen partial pressure, and checks what a duplicant actually breathes. It demonstrates why a real atmosphere needs composition rather than a single-element cell model.
+
+**[▶ Watch AirLoop on YouTube](https://youtu.be/3JrISB8L77M)** · **[Read the Gas Mixture API](docs/api/GAS-MIXTURE.md)** · **[Read the Atmosphere API](docs/api/ATMOSPHERE.md)**
+
+---
+
+### PhaseLoop — Thermodynamic phase change
+
+<a href="https://youtu.be/MsLZPUQXO1E"><img src="https://img.youtube.com/vi/MsLZPUQXO1E/maxresdefault.jpg" alt="Watch the PhaseLoop demonstration" width="800"></a>
+
+**Pressure-driven phase change · latent heat · gas/liquid bridging · work · energy transfer**
+
+PhaseLoop demonstrates a real gas/liquid loop in which pressure-driven phase change and work move energy between the cold and hot sides rather than simply changing a temperature value.
+
+**[▶ Watch PhaseLoop on YouTube](https://youtu.be/MsLZPUQXO1E)** · **[Read the Pipe Matter API](docs/api/MATTER.md)** · **[Read the Pipe Network API](docs/api/PIPES.md)** · **[Read the Thermal & Energy API](docs/api/THERMAL-ENERGY.md)**
+
+---
+
+### PipeStress — Matter-aware pipe failure
+
+<a href="https://youtu.be/5R5uP2IiXP4"><img src="https://img.youtube.com/vi/5R5uP2IiXP4/maxresdefault.jpg" alt="Watch the PipeStress demonstration" width="800"></a>
+
+**Pressure · thermal stress · condensation · freezing · standing matter · rupture**
+
+PipeStress drives a real 12-tile gas run through baseline, mass overpressure, thermal overpressure, condensation, freezing, and rupture/stress states. A major result of the test was that pipe stress must account for **standing liquid and standing solid matter**, not merely flowing conduit contents.
+
+**[▶ Watch PipeStress on YouTube](https://youtu.be/5R5uP2IiXP4)** · **[Read the Pipe Network API](docs/api/PIPES.md)**
+
+---
+
+### SimViz — Inspect the simulation itself
+
+<a href="https://youtu.be/1bOM0Sx26bE"><img src="https://img.youtube.com/vi/1bOM0Sx26bE/maxresdefault.jpg" alt="Watch the SimViz demonstration" width="800"></a>
+
+**Offline simulation · live attachment · history playback · cell inspection · extension data · diagnostics**
+
+SimViz is a separate native application for inspecting the same simulation data through captured/offline state or a running ONI process. It supports simulation history, individual cell inspection, extension properties, element attributes, events, state dumps, statistics, snapshots, and headless rendering/testing.
+
+**[▶ Watch SimViz on YouTube](https://youtu.be/1bOM0Sx26bE)** · **[Explore the SDK documentation](#sdk-documentation)**
+
+---
+
+> ### About the video presentation
+> GitHub does **not** permit arbitrary YouTube `<iframe>` players inside repository Markdown. The large preview images above are therefore implemented as **clickable video thumbnails**: they look and behave like embedded showcase panels while remaining compatible with GitHub's README renderer.
+>
+> The original `.mp4` recordings are also retained on the [`Video-Uploads` branch](https://github.com/Salacious-Oni-Dev/API-Pre-Release-Preview/tree/Video-Uploads) as archival copies.
+
+---
+
+# SDK documentation
+
+The preview is organized as a **reference manual**, not a giant class-name dump. Each API page is being built from the actual source declarations and implementations, with the native path traced where relevant.
+
+## Core APIs
+
+| Area | Reference | What it exposes |
+|---|---|---|
+| 🧪 Gas | [Gas Mixture](docs/api/GAS-MIXTURE.md) | Multi-species composition, mass, pressure and conversion |
+| 🌬️ Atmosphere | [Atmosphere](docs/api/ATMOSPHERE.md) | Oxygen, contaminants, temperature and combustion assessment |
+| 🧱 Materials | [Material Properties](docs/api/MATERIALS.md) | Material-property extension and lookup surfaces |
+| 💧 Matter | [Pipe Matter](docs/api/MATTER.md) | Condensed/boiled standing matter inside conduits |
+| 🧯 Pipes | [Pipe Networks](docs/api/PIPES.md) | Pipe networks, pressure, stress and standing-matter state |
+| 🔥 Energy | [Thermal & Energy](docs/api/THERMAL-ENERGY.md) | Thermal mass, work, heat and enthalpy extensions |
+| 🧬 Elements | [Elements & Cells](docs/api/ELEMENTS.md) | Element/cell-facing simulation surfaces |
+| 📚 All APIs | [API Reference Index](docs/api/README.md) | Complete verified API documentation as the audit progresses |
+
+Additional reference pages cover extension properties, element attributes, events, scheduling, persistence, rooms, deterministic state, diagnostics, and tooling as their source audits are completed.
 
 ---
 
 # Architecture
 
 ```text
-                         Oxygen Not Included
+                         OXYGEN NOT INCLUDED
                                   │
-                         flagship / 3rd-party mods
+                    ┌─────────────▼─────────────┐
+                    │       Mod / Gameplay      │
+                    └─────────────┬─────────────┘
                                   │
-                         ┌────────▼────────┐
-                         │   oni-framework │
-                         │    managed SDK  │
-                         └────────┬────────┘
+                    ┌─────────────▼─────────────┐
+                    │       oni-framework       │
+                    │       managed SDK         │
+                    └─────────────┬─────────────┘
                                   │
-                         ┌────────▼────────┐
-                         │ ONI-Sim-Custom  │
-                         │ native physics  │
-                         │ + extension ABI │
-                         └────────┬────────┘
+                    ┌─────────────▼─────────────┐
+                    │      ONI-Sim-Custom       │
+                    │  native simulation + ABI  │
+                    └─────────────┬─────────────┘
                                   │
                          extended simulation
-
-                    ┌──────────────────────────┐
-                    │          SimViz           │
-                    │ offline / live inspection │
-                    └──────────────────────────┘
+                                  │
+                    ┌─────────────▼─────────────┐
+                    │          SimViz            │
+                    │ offline + live inspection │
+                    └───────────────────────────┘
 ```
 
-The central rule is:
+### The integration rule
 
 > **New simulation capabilities belong in the custom SimDLL and are exposed to mods through `oni-framework`. Flagship and third-party mods should not privately reach into the native DLL.**
 
-`ONI-Sim` remains the frozen 1:1 vanilla replacement. `ONI-Sim-Custom` is the extension implementation. `oni-framework` is the managed modder contract.
+- `ONI-Sim` — frozen 1:1 vanilla replacement.
+- `ONI-Sim-Custom` — native extension implementation.
+- `oni-framework` — managed modder-facing contract.
+- `oni-flagship` — flagship systems consuming the framework.
+- `oni-simviz` — independent simulation visualization and inspection.
 
 ---
 
-# Showcase Rigs
+# What makes this an SDK preview?
 
-These are real executable demonstrations using the same framework surfaces intended for third-party mods.
+The goal is not merely to show that the custom simulation works. The goal is to document a **usable contract for mod authors**.
 
-> **Hosted demos:** The primary showcase videos are now hosted on YouTube for reliable browser playback. The original `.mp4` files remain on the [`Video-Uploads` branch](https://github.com/Salacious-Oni-Dev/API-Pre-Release-Preview/tree/Video-Uploads) as archival copies.
+For significant public surfaces, the reference documents aim to answer:
 
-| Showcase | What it demonstrates | Hosted video | Archive |
-|---|---|---|---|
-| **AirLoop** | Multi-species atmosphere, oxygen partial pressure, composition-aware breathing | [▶ Watch AirLoop](https://youtu.be/3JrISB8L77M) | [MP4](https://github.com/Salacious-Oni-Dev/API-Pre-Release-Preview/blob/Video-Uploads/airloop.mp4) |
-| **PhaseLoop** | Pressure-driven phase change, latent heat, gas/liquid bridging, work and heat transfer | [▶ Watch PhaseLoop](https://youtu.be/MsLZPUQXO1E) | [MP4](https://github.com/Salacious-Oni-Dev/API-Pre-Release-Preview/blob/Video-Uploads/phaseloop.mp4) |
-| **PipeStress** | Pressure, condensation, freezing, standing matter and rupture/stress evaluation | [▶ Watch PipeStress](https://youtu.be/5R5uP2IiXP4) | [MP4](https://github.com/Salacious-Oni-Dev/API-Pre-Release-Preview/blob/Video-Uploads/pipestress.mp4) |
-| **SimViz** | Offline/live simulation inspection, history playback, extension data and diagnostics | [▶ Watch SimViz](https://youtu.be/1bOM0Sx26bE) | [MP4](https://github.com/Salacious-Oni-Dev/API-Pre-Release-Preview/blob/Video-Uploads/simviz-showcase.mp4) |
+1. **What can I read?**
+2. **What can I change?**
+3. **What does the value mean?**
+4. **What are the units?**
+5. **When is it safe or valid to call?**
+6. **Does it allocate?**
+7. **Is it simulation-thread constrained?**
+8. **Does it require the custom SimDLL?**
+9. **What happens with the stock SimDLL?**
+10. **Which real flagship systems consume it?**
+11. **What are the limitations or deliberate stubs?**
+12. **What does a practical mod usage pattern look like?**
 
-## AirLoop
+The documentation is explicitly being produced by tracing **actual source declarations and implementations**. A filename is never treated as proof that a type or method is public, supported, or modder-facing.
 
-**Demonstrates:** multi-species atmosphere, oxygen partial pressure, composition-aware breathing, contamination, and atmospheric assessment.
+### API classifications
 
-**Video:** [▶ Watch the AirLoop demonstration on YouTube](https://youtu.be/3JrISB8L77M)
-
-AirLoop seals an atmosphere, mixes species to a target oxygen partial pressure, and checks what a duplicant actually breathes. It demonstrates why a real atmosphere needs composition rather than a single-element cell model.
-
-**Primary references:** [Gas Mixture](docs/api/GAS-MIXTURE.md) · [Atmosphere](docs/api/ATMOSPHERE.md)
-
-## PhaseLoop
-
-**Demonstrates:** pressure-driven phase change, latent heat, gas/liquid bridging, work, and heat transfer rather than heat deletion.
-
-**Video:** [▶ Watch the PhaseLoop demonstration on YouTube](https://youtu.be/MsLZPUQXO1E)
-
-The loop moves matter between gas and liquid networks while measuring the cold-side/hot-side energy result. It demonstrates thermodynamic machinery rather than scripted temperature changes.
-
-**Primary references:** [Pipe Matter](docs/api/MATTER.md) · [Pipe Networks](docs/api/PIPES.md) · [Thermal & Energy](docs/api/THERMAL-ENERGY.md)
-
-## PipeStress
-
-**Demonstrates:** pipe pressure, condensation, freezing, standing matter, and rupture/stress evaluation.
-
-**Video:** [▶ Watch the PipeStress demonstration on YouTube](https://youtu.be/5R5uP2IiXP4)
-
-The 12-tile test run moves through baseline, mass overpressure, thermal overpressure, condensation, freezing, and rupture/stress states. A key result is that stress evaluation must account for **standing liquid and standing solid matter**, not only flowing contents.
-
-**Primary reference:** [Pipe Networks](docs/api/PIPES.md)
+- **Modder-facing** — intended gameplay/mod integration surface.
+- **Developer / diagnostic** — useful for tools, validation and development.
+- **Internal plumbing** — implementation machinery that normal mods should not call directly.
+- **Experimental / stubbed** — exposed for development or future work but not yet a complete gameplay contract.
 
 ---
 
-# SimViz
+# Integration requirements
 
-**Demonstrates:** offline simulation inspection, captured-history playback, live attachment, cell inspection, extension properties, element attributes, events, state dumps, statistics, snapshots, and headless testing/rendering.
+Consuming mods should reference `OniFramework.dll` as a shared framework dependency rather than bundling their own copy.
 
-**Video:** [▶ Watch the SimViz showcase on YouTube](https://youtu.be/1bOM0Sx26bE)
+`FrameworkVersion.Require(major, minor, consumer)` declares the minimum framework API floor, while duplicate-instance detection protects against accidentally loading multiple framework copies.
 
-SimViz is a **separate native application**, not an in-game graphics injector. It can inspect the same simulation information from captured/offline data or a running ONI process through framework bulk/debug routes.
-
----
-
-# Documentation standard
-
-This reference is being produced by reading the **actual source declarations and implementations**, then tracing important APIs through their managed and native layers. A filename is not treated as proof that a type is public or supported.
-
-For significant surfaces, the manual aims to document:
-
-1. exact public declarations;
-2. parameter and return semantics;
-3. units;
-4. timing/threading considerations;
-5. allocation/performance behavior;
-6. stock-SimDLL behavior;
-7. native extension dependency;
-8. actual flagship consumers;
-9. limitations and deliberate stubs;
-10. small practical usage examples.
-
-APIs are also classified as **modder-facing**, **developer/diagnostic**, **internal plumbing**, or **experimental/stubbed**.
+Normal gameplay mods should use the public framework facades appropriate to their needs. `OniExtMessages` and direct native P/Invoke are implementation plumbing, not the intended modder contract.
 
 ---
 
-# Integration rule
+# Release status
 
-Consuming mods should reference `OniFramework.dll` as a shared framework dependency rather than bundling their own copy. `FrameworkVersion.Require(major, minor, consumer)` declares an API floor, while duplicate-instance detection protects against accidentally loading multiple framework copies.
+**Current:** private pre-release documentation and showcase.
 
-Normal gameplay mods should use the public framework facade appropriate to the capability they need. `OniExtMessages` and direct native P/Invoke are implementation plumbing, not the intended modder contract.
+**Target source release:** **Sunday, September 13, 2026**, subject to final release preparation and validation.
+
+The implementation repositories are currently private. This preview intentionally provides the SDK documentation, architecture, examples, demonstrations, compatibility information, ABI documentation, limitations, and source-audit notes without attaching the implementation source itself.
+
+See **[Release Status](docs/RELEASE-STATUS.md)** for the detailed release model.
 
 ---
 
-# Preview philosophy
+## Repository structure
 
-This project is intended to answer the questions an SDK user actually has:
+```text
+API-Pre-Release-Preview/
+├── README.md                         ← you are here
+├── docs/
+│   ├── GETTING-STARTED.md
+│   ├── ARCHITECTURE.md
+│   ├── RELEASE-STATUS.md
+│   ├── api/                          ← SDK reference
+│   ├── native/                       ← ABI / native boundary
+│   ├── examples/                     ← practical usage
+│   └── showcases/                    ← rig-by-rig technical docs
+└── Video-Uploads branch              ← archival MP4 recordings
+```
 
-> **What can I ask the simulation? What can I change? What does the value mean? What does it cost? What happens with a stock DLL? What native feature is underneath it? What are the limitations? And how would I actually use it in a mod?**
+---
 
-The detailed documents exist to answer those questions without hiding the important implementation boundaries behind a shallow list of class names.
+<p align="center">
+  <strong>Custom simulation, exposed as a modder-facing SDK.</strong><br>
+  <sub>Source-audited • Native-backed • Demonstrated • Pre-release</sub>
+</p>
